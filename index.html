@@ -1,0 +1,648 @@
+D:/求职/个人作品/成品/portfolio.html</｜｜DSML｜｜parameter>
+<｜｜DSML｜｜parameter name="content" string="true"><!DOCTYPE html>
+
+<html lang="zh-CN"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>吴燕婷 · 作品集</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: #faf8f7;
+        color: #2d2d2d;
+        line-height: 1.8;
+        scroll-behavior: smooth;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(250, 248, 247, 0.93);
+        backdrop-filter: blur(10px);
+        padding: 14px 0;
+        z-index: 100;
+        border-bottom: 1px solid #e8e0dd;
+        transition: box-shadow 0.3s;
+    }
+
+    nav.shadow {
+        box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+
+    nav .inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav .logo {
+        font-size: 17px;
+        font-weight: 500;
+        color: #8a7a72;
+        letter-spacing: 1px;
+    }
+
+    nav .links {
+        display: flex;
+        gap: 4px;
+    }
+
+    nav .links a {
+        text-decoration: none;
+        color: #6b5b53;
+        font-size: 13px;
+        padding: 4px 12px;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+
+    nav .links a:hover {
+        background: #efe9e5;
+        color: #4a3a32;
+    }
+
+    .page {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        padding: 130px 28px 60px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+        font-weight: 500;
+        color: #2d2d2d;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    .hero .sub {
+        font-size: 16px;
+        color: #8a7a72;
+        margin-bottom: 8px;
+    }
+
+    .hero .contact-line {
+        font-size: 13px;
+        color: #b5978c;
+        margin-bottom: 24px;
+    }
+
+    .hero .contact-line .copy-btn {
+        background: none;
+        border: 1px solid #d5c9c2;
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #8a7a72;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-left: 4px;
+    }
+
+    .hero .contact-line .copy-btn:hover {
+        background: #efe9e5;
+    }
+
+    .hero .contact-line .copied-tip {
+        font-size: 12px;
+        color: #b5978c;
+        margin-left: 6px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .hero .contact-line .copied-tip.show {
+        opacity: 1;
+    }
+
+    .hero .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .hero .tags span {
+        background: #efe9e5;
+        color: #6b5b53;
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    .works {
+        padding: 0 28px 20px;
+    }
+
+    .works-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #2d2d2d;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e8e0dd;
+        margin-bottom: 24px;
+    }
+
+    .work-card {
+        background: #ffffff;
+        border: 1px solid #e8e0dd;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: box-shadow 0.3s;
+    }
+
+    .work-card:hover {
+        box-shadow: 0 4px 20px rgba(138, 122, 114, 0.06);
+    }
+
+    .work-card-header {
+        padding: 24px 28px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        transition: background 0.2s;
+    }
+
+    .work-card-header:hover {
+        background: #fcfaf9;
+    }
+
+    .work-card-header .left .num {
+        font-size: 11px;
+        color: #b5978c;
+        letter-spacing: 2px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .work-card-header .left h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #2d2d2d;
+    }
+
+    .work-card-header .left .brief {
+        font-size: 13px;
+        color: #8a7a72;
+        margin-top: 4px;
+    }
+
+    .work-card-header .toggle-icon {
+        font-size: 20px;
+        color: #c5b5ad;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+        margin-left: 16px;
+    }
+
+    .work-card-header .toggle-icon.open {
+        transform: rotate(180deg);
+    }
+
+    .work-card-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .work-card-body.open {
+        max-height: 10000px;
+    }
+
+    .work-card-body .inner {
+        padding: 0 28px 28px;
+        border-top: 1px solid #ede8e5;
+    }
+
+    .work-card-body .inner h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #2d2d2d;
+        margin: 24px 0 4px;
+    }
+
+    .work-card-body .inner h3 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #4a3a32;
+        margin: 20px 0 8px;
+    }
+
+    .work-card-body .inner h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #6b5b53;
+        margin: 16px 0 6px;
+    }
+
+    .work-card-body .inner p {
+        font-size: 14px;
+        color: #4a4a4a;
+        margin-bottom: 12px;
+        line-height: 1.9;
+    }
+
+    .work-card-body .inner ul, .work-card-body .inner ol {
+        padding-left: 20px;
+        margin-bottom: 14px;
+    }
+
+    .work-card-body .inner li {
+        font-size: 14px;
+        color: #4a4a4a;
+        margin-bottom: 6px;
+        line-height: 1.8;
+    }
+
+    .work-card-body .inner table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0 20px;
+        font-size: 13px;
+    }
+
+    .work-card-body .inner th {
+        background: #f5f0ed;
+        font-weight: 500;
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid #e0d6d0;
+        color: #4a3a32;
+    }
+
+    .work-card-body .inner td {
+        padding: 8px 12px;
+        border: 1px solid #e0d6d0;
+        vertical-align: top;
+        color: #4a4a4a;
+    }
+
+    .work-card-body .inner tr:nth-child(even) td {
+        background: #fcfaf9;
+    }
+
+    .work-card-body .inner .highlight {
+        background: #faf5f2;
+        border-left: 3px solid #b5978c;
+        padding: 14px 18px;
+        margin: 12px 0 20px;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .work-card-body .inner .highlight p {
+        font-size: 14px;
+        color: #4a4a4a;
+        margin: 0;
+    }
+
+    .work-card-body .inner .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 16px 0 24px;
+    }
+
+    .work-card-body .inner .stat-card {
+        background: #faf5f2;
+        border-radius: 8px;
+        padding: 16px 12px;
+        text-align: center;
+    }
+
+    .work-card-body .inner .stat-card .num {
+        font-size: 22px;
+        font-weight: 500;
+        color: #4a3a32;
+    }
+
+    .work-card-body .inner .stat-card .desc {
+        font-size: 12px;
+        color: #8a7a72;
+        margin-top: 2px;
+    }
+
+    .back-top {
+        display: none;
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        width: 42px;
+        height: 42px;
+        background: #ffffff;
+        border: 1px solid #e0d6d0;
+        border-radius: 50%;
+        font-size: 18px;
+        color: #8a7a72;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        z-index: 99;
+    }
+
+    .back-top.show {
+        display: flex;
+    }
+
+    .back-top:hover {
+        background: #f5f0ed;
+        transform: translateY(-2px);
+    }
+
+    .contact {
+        margin: 40px 28px 0;
+        padding: 36px;
+        background: #f5f0ed;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .contact p {
+        font-size: 13px;
+        color: #8a7a72;
+        margin-bottom: 6px;
+    }
+
+    .contact .phone {
+        font-size: 18px;
+        font-weight: 500;
+        color: #2d2d2d;
+        letter-spacing: 1px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 28px;
+        font-size: 12px;
+        color: #b5978c;
+    }
+
+    @media (max-width: 600px) {
+        .hero { padding: 110px 20px 40px; }
+        .hero h1 { font-size: 28px; }
+        .works { padding: 0 16px; }
+        .work-card-header { padding: 18px 20px; }
+        .work-card-body .inner { padding: 0 20px 20px; }
+        .contact { margin: 28px 16px 0; padding: 28px 20px; }
+        .back-top { right: 16px; bottom: 16px; }
+    }
+</style>
+</head> <body>
+
+<nav id="navbar">
+    <div class="inner">
+        <span class="logo">吴燕婷</span>
+        <div class="links">
+            <a href="#works">作品</a>
+            <a href="#contact">联系</a>
+        </div>
+    </div>
+</nav>
+
+<div class="page">
+
+    <div class="hero">
+        <h1>吴燕婷</h1>
+        <p class="sub">求职：产品运营 / 运营助理 / 项目助理</p>
+        <p class="contact-line">
+            18100374384
+            <button class="copy-btn" onclick="copyPhone()">复制</button>
+            <span class="copied-tip" id="copiedTip">已复制</span>
+        </p>
+        <div class="tags">
+            <span>数据处理与分析</span>
+            <span>用户增长策略</span>
+            <span>产品原型设计</span>
+            <span>AI工具应用</span>
+            <span>竞品分析</span>
+        </div>
+    </div>
+
+    <div class="works" id="works">
+        <div class="works-title">作品</div>
+
+        <!-- 作品一 -->
+        <div class="work-card">
+            <div class="work-card-header" onclick="toggleWork(this)">
+                <div class="left">
+                    <div class="num">WORK 01</div>
+                    <h3>飞书文档 vs 石墨文档 · 竞品分析</h3>
+                    <p class="brief">从新用户体验看两款产品的差距在哪里</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="work-card-body">
+                <div class="inner">
+                    <div class="highlight">
+                        <p>飞书文档的功能丰富度远超石墨文档，但新手入门门槛也更陡峭。不编造收入数字，只回答一个问题：<strong>飞书在"让新用户快速上手"这件事上，和石墨差了多少，差在哪，以及如果我是运营团队的人，我会关注什么方向。</strong></p>
+                    </div>
+
+                    <h3>一、我怎么做的分析</h3>
+                    <p>这篇分析不是凭空感觉出来的。做了三件事：亲自使用两款产品各写3篇文档并记录路径；逐项统计工具栏按钮、模板分类等可验证的数字；查阅公开行业数据作为背景参考。整份分析不依赖内部数据，每一条结论都可以自己验证。</p>
+
+                    <h3>二、三个关键差距</h3>
+
+                    <h4>1. 工具栏按钮数：54 vs 20</h4>
+                    <p>飞书文档默认展开约54个按钮，石墨约20个，前者是后者的2.7倍。</p>
+
+                    <table>
+                        <tr><th>功能分类</th><th>飞书文档</th><th>石墨文档</th></tr>
+                        <tr><td>文字格式</td><td>9</td><td>5</td></tr>
+                        <tr><td>段落排版</td><td>12</td><td>4</td></tr>
+                        <tr><td>插入对象</td><td>12</td><td>6</td></tr>
+                        <tr><td>协作功能</td><td>6</td><td>2</td></tr>
+                        <tr><td>AI功能</td><td>5</td><td>0</td></tr>
+                        <tr><td>其他工具</td><td>10</td><td>3</td></tr>
+                        <tr><td><strong>合计</strong></td><td><strong>54</strong></td><td><strong>20</strong></td></tr>
+                    </table>
+
+                    <div class="highlight">
+                        <p>第一次打开飞书编辑器，最大的感受是"不知道该点哪个"。在石墨里几秒钟就能找到加粗、列表、插入图片，而飞书需要花时间逐一扫描图标。</p>
+                    </div>
+
+                    <h4>2. 新建文档决策时间：30-45秒 vs 10-15秒</h4>
+                    <p>飞书的新建面板展示8个大类、20+个子类模板。从点击"新建"到正式开始写，约需30-45秒，其中近一半时间在浏览模板选项。石墨只有4类、约10个精选模板，决策时间仅10-15秒。</p>
+
+                    <div class="highlight">
+                        <p>模板多不是问题——对老用户是生产力。但新用户连"空白文档"和"会议纪要模板"的区别都不清楚时，给他20个选择不是帮助，是增加负担。</p>
+                    </div>
+
+                    <h4>3. 哪些功能该保留、哪些该收起来</h4>
+                    <p>飞书的54个按钮里，大部分是"大多数人在大多数时候不会用到的"——公式、代码块、目录、高级格式设置等。新用户80%的操作集中在加粗、斜体、插入图片、列表、标题这几个功能上。把其他功能先收起来，用户需要时再自动暴露，是更好的选择。</p>
+
+                    <div class="stat-row">
+                        <div class="stat-card">
+                            <div class="num">2.7×</div>
+                            <div class="desc">飞书工具栏是石墨的倍数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="num">30-45秒</div>
+                            <div class="desc">飞书新建文档决策时间</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="num">10-15秒</div>
+                            <div class="desc">石墨新建文档决策时间</div>
+                        </div>
+                    </div>
+
+                    <h3>三、这些差距为什么值得关注</h3>
+                    <p>没有飞书的内部数据，所以无法精确算出"优化后能多赚多少钱"。但新用户体验和转化率之间一定存在关联——几乎所有SaaS产品的北极星指标（DAU、留存率、付费转化率）都会受新用户前3次使用体验的影响。</p>
+                    <p>如果我是飞书运营团队的人，会关注两个指标：<strong>新建完成率</strong>（有多少用户新建文档后完成了编辑）和<strong>首次编辑时长</strong>（从打开编辑器到输入第一行有效文字的时间）。</p>
+                    <p>验证这个判断的正确做法不是坐在屋里算收入——而是做一次A/B测试：把一部分新用户的工具栏默认只展示核心功能，对比现有版本的留存率和付费转化率。</p>
+
+                    <h3>四、运营视角的优化方向</h3>
+
+                    <p><strong>方向一：降低新用户选择成本。</strong>前3次使用中默认展示精简版工具栏，随着使用次数增加逐步暴露更多功能。"渐进式暴露"在C端产品中已经很常见。</p>
+
+                    <p><strong>方向二：场景化新建引导。</strong>与其让新用户面对20个模板无从选择，不如点击"新建"后问一句"你想写什么？"——会议纪要、项目计划、个人笔记，不同场景推荐不同模板。</p>
+
+                    <p><strong>方向三：多维表格体验闭环。</strong>先选场景，自动生成字段，用户只需要填数据。这个思路在Airtable上已被验证过。</p>
+
+                    <div class="highlight">
+                        <p>以上三个方向有一个共同点：不需要大量开发排期，改动的是用户看到的内容和引导的顺序——这是运营团队可以快速推动的：出方案、做测试、看数据，然后决定是否建议产品团队跟进。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 作品二 -->
+        <div class="work-card">
+            <div class="work-card-header" onclick="toggleWork(this)">
+                <div class="left">
+                    <div class="num">WORK 02</div>
+                    <h3>小红书轻互动机制设计探索</h3>
+                    <p class="brief">从"打问号"现象到"标记有趣"功能方案</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="work-card-body">
+                <div class="inner">
+
+                    <h3>一、需求发现</h3>
+
+                    <p>在小红书评论区，娱乐、搞怪、生活记录类内容下，经常能看到被顶上热评的评论："？？？""什么迷惑行为""这个可以上莫名其妙榜单了"。这些评论获得几百上千个赞——不是个别人的感受，而是群体的共同反应。</p>
+
+                    <p>拆开来看，用户有三个场景的共同需求：内容有趣搞怪时想表达"也太好笑了吧"——点赞太轻，评论太重；内容有疑点时想表达"这个我不确定"——不想写长篇评论；遇到陌生领域时想表达"这是什么？我想知道"——不确定值不值得发评论。</p>
+
+                    <p>现有的四种互动方式（点赞、收藏、评论、转发）覆盖了"我认同、以后用、我想说、值得传播"的场景，但没有一个覆盖"我注意到了并且想表达"的中间态。</p>
+
+                    <h3>二、方案的局限性</h3>
+
+                    <p>如果直接上线一个"打问号"按钮，会面临四个风险：社交含义偏负面（❓代表质疑）；容易被滥用；适用场景有限；部分用户不理解功能价值。</p>
+
+                    <p>直接上线风险很高。但需求不是错的——错的是解决方案需要重新设计。</p>
+
+                    <h3>三、产品设计</h3>
+
+                    <p>核心思路：不做"打问号"功能，做"标记有趣"功能。语义决定感知——把"❓"解读为"质疑"就是攻击性的，解读为"我注意到这里有趣"就是趣味性的。</p>
+
+                    <p><strong>交互设计：</strong>在现有互动按钮旁新增"🙃"按钮，点击后弹出三个选项——"太好笑了😂""什么迷惑行为🤔""我震惊了😮"。用户的标记不进入评论区，不公开显示，只作为创作者后台的数据信号。</p>
+
+                    <p><strong>创作者后台：</strong>新增数据模块显示"标记趣味"的次数分布，具体到哪个段落被标记了什么情绪。</p>
+
+                    <p><strong>风险控制：</strong>每日使用上限20次、用户可在设置中关闭、创作者可隐藏数据、无公开曝光。</p>
+
+                    <div class="stat-row">
+                        <div class="stat-card">
+                            <div class="num">低门槛</div>
+                            <div class="desc">点一下就行，不需打字</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="num">无压力</div>
+                            <div class="desc">互动不公开，不被误解</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="num">数据深</div>
+                            <div class="desc">知道"哪个段落"被标记</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="num">信号新</div>
+                            <div class="desc">与点赞/收藏维度不同</div>
+                        </div>
+                    </div>
+
+                    <h3>四、灰度验证</h3>
+                    <p>小范围灰度，不直接全量上线。5%用户作为实验组，观察14天。核心指标：使用率>10%，负面反馈<1%。数据正面则扩大灰度到20%，否则分析原因或放弃。</p>
+
+                    <h3>五、推动落地</h3>
+                    <p>灰度通过后，准备四份材料推动产品团队排期：PRD、交互原型、数据埋点方案、上线评估checklist。预估开发周期2-3周。</p>
+                    <p>明确的上线/放弃标准：使用率>10%且负反馈<1%→全量上线；使用率5-10%→优化入口继续灰度；负反馈>3%→暂停分析；使用率<3%→考虑下线。</p>
+
+                    <h3>六、迭代规划</h3>
+                    <p>北极星指标：轻互动参与度。迭代路线：V1.0验证可用性→V1.1优化体验→V1.2探索与推荐算法结合→V2.0扩展为系列轻反馈。</p>
+                    <p>整个项目形成了完整的产品闭环：现象发现→需求分析→方案设计→灰度验证→推动上线→追踪数据→迭代优化。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 作品三（预留） -->
+        <div class="work-card">
+            <div class="work-card-header" onclick="toggleWork(this)">
+                <div class="left">
+                    <div class="num">WORK 03</div>
+                    <h3>更多作品，持续更新中</h3>
+                    <p class="brief">正在准备新的作品，敬请期待</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="work-card-body">
+                <div class="inner">
+                    <p style="text-align:center; color:#b5978c; padding:20px 0;">新的作品正在路上，后续会更新到这里。</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contact" id="contact">
+        <p>联系方式</p>
+        <div class="phone">18100374384</div>
+    </div>
+
+    <footer>© 2026 吴燕婷</footer>
+
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+    function toggleWork(header) {
+        const body = header.nextElementSibling;
+        const icon = header.querySelector('.toggle-icon');
+        body.classList.toggle('open');
+        icon.classList.toggle('open');
+    }
+
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        const btn = document.getElementById('backTop');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow');
+        } else {
+            nav.classList.remove('shadow');
+        }
+        if (window.scrollY > 400) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    });
+
+    function copyPhone() {
+        const phone = '18100374384';
+        navigator.clipboard.writeText(phone).then(() => {
+            const tip = document.getElementById('copiedTip');
+            tip.classList.add('show');
+            setTimeout(() => tip.classList.remove('show'), 2000);
+        });
+    }
+</script>

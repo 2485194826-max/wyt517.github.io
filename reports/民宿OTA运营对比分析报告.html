@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海徐汇区民宿OTA运营对比分析</title>
+<style>
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.8;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 24px;
+    background: #fff;
+    color: #2d2d2d;
+  }
+  h1 { font-size: 24px; font-weight: 500; margin-bottom: 4px; color: #2d2d2d; }
+  .sub { font-size: 14px; color: #8a7a72; margin-bottom: 28px; }
+  h2 { font-size: 20px; font-weight: 500; margin-top: 36px; margin-bottom: 16px; border-bottom: 1px solid #e8e0dd; padding-bottom: 8px; color: #2d2d2d; }
+  h3 { font-size: 16px; font-weight: 500; margin-top: 24px; margin-bottom: 8px; color: #4a3a32; }
+  p { font-size: 15px; color: #4a4a4a; margin-bottom: 14px; text-align: justify; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+  th, td { border: 1px solid #d5c9c2; padding: 8px 12px; text-align: left; }
+  th { background: #f5f0ed; font-weight: 500; color: #4a3a32; text-align: center; }
+  td { text-align: center; color: #4a4a4a; }
+  tr:nth-child(even) td { background: #fcfaf9; }
+  .tag { display: inline-block; background: #efe9e5; color: #6b5b53; padding: 2px 10px; border-radius: 4px; font-size: 13px; }
+  .strategy { background: #faf5f2; border-left: 4px solid #b5978c; padding: 16px 20px; margin: 16px 0 20px; border-radius: 0 6px 6px 0; }
+  .strategy .label { font-size: 11px; font-weight: 600; color: #b5978c; letter-spacing: 1px; margin-bottom: 4px; }
+  .strategy h3 { margin-top: 0; }
+  .strategy p { margin-bottom: 0; }
+  .back-link { display: inline-block; margin: 20px 0 40px; color: #8a7a72; text-decoration: none; font-size: 14px; }
+  .back-link:hover { color: #4a3a32; }
+  hr { border: none; border-top: 1px solid #e8e0dd; margin: 32px 0; }
+  .chart-box { margin: 20px 0; text-align: center; }
+  .chart-box img { max-width: 100%; border: 1px solid #e8e0dd; border-radius: 8px; }
+  .figcap { font-size: 13px; color: #8a7a72; margin-top: 6px; }
+  .summary { background: #f9f7f5; padding: 20px 24px; border-radius: 8px; margin: 20px 0; }
+  .summary p { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<p><a class="back-link" href="../portfolio.html">&larr; 返回作品集</a></p>
+
+<h1>上海徐汇区民宿OTA运营现状对比分析</h1>
+<p class="sub">分析对象：美团民宿平台 · 徐汇区及周边区域（徐家汇/打浦桥/衡山路）</p>
+<p class="sub">分析方法：在徐汇区范围内，选取3家价格区间相近（300-500元/晚）、运营水平呈现梯度的民宿进行多维度数据对比。以下分析全部基于美团民宿前台可获取的公开数据。</p>
+
+<h2>一、数据概览</h2>
+<table>
+  <thead>
+    <tr>
+      <th>指标</th>
+      <th>店铺A · 事顺民宿（徐家汇二店）</th>
+      <th>店铺B · 家禾居民宿（打浦桥田子坊三店）</th>
+      <th>店铺C · 尚好·家民宿（五官科医院店）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>评分</td><td>5.0</td><td>4.7</td><td>4.4</td></tr>
+    <tr><td>评价数（条）</td><td>298</td><td>31</td><td>2,032</td></tr>
+    <tr><td>价格（元/晚）</td><td>468</td><td>333</td><td>310</td></tr>
+    <tr><td>照片数（张）</td><td>214</td><td>58</td><td>100</td></tr>
+    <tr><td>平台标签</td><td>超棒</td><td>棒</td><td>不错</td></tr>
+    <tr><td>首图风格</td><td>专业摄影 / 暖色调</td><td>暖色调实拍</td><td>专业摄影 / 暗调</td></tr>
+    <tr><td>标题结构</td><td>店名 + 舒适型</td><td>店名 + 经济型</td><td>店名 + 经济型</td></tr>
+    <tr><td>设施标注</td><td>停车场、空调</td><td>未标注</td><td>叫醒服务、空调、行李寄存</td></tr>
+    <tr><td>开业时间</td><td>2024年</td><td>2018年</td><td>2024年</td></tr>
+    <tr><td>运营时长</td><td>约1年</td><td>约8年</td><td>约1年</td></tr>
+  </tbody>
+</table>
+
+<h2>二、数据分析与发现</h2>
+
+<h3>发现一：同年开业的两家店，评价获取效率差异悬殊</h3>
+<p>店铺A与店铺C均在2024年开业，运营时长相近（约1年）。店铺C评价数2,032条，店铺A评价数298条，店铺C是店铺A的6.8倍。两者评分也存在差距：店铺A 5.0分，店铺C 4.4分。</p>
+<p>这一对比排除了开业时间长短这一变量。说明即使在同一区域、同价位区间、同一起跑线开业的民宿，评价积累效率可以相差近7倍。店铺C通过更高效的运营动作——可能是更高的入住率、更积极的住后引导或更有效的平台活动参与——在短时间内建立了显著的规模优势。</p>
+
+<h3>发现二：店铺B运营超8年，评价积累效率极低</h3>
+<p>店铺B从2018年上线至今约8年，仅积累31条评价，年均约4条。对照组：同年开业的店铺A和店铺C在更短时间内完成了远超店铺B的评价积累。</p>
+<p>差异不在评分管理上——店铺B评分4.7分，高于店铺C的4.4分。差距出现在评价的绝对量上。说明店铺B过去8年在线上的运营参与度有限，美团平台的运营动作（活动报名、曝光争取、评价引导）基本处于未激活状态。</p>
+
+<h3>发现三：评分达标的门槛较低，评价量需系统化投入才能突破</h3>
+<p>三家店评分均在4.4分以上，均处于及格线以上水平。但评价量从31条到2,032条跨越了两个数量级。对于大多数用户而言，预订决策时参考的锚点是"有多少人住过并留下了评价"，而非"现有评价是否为满分"。店铺C以4.4分配合2,032条评价建立的用户信任门槛，高于评分5.0但评价仅298条的店铺A。</p>
+
+<h2>三、运营优化方向建议</h2>
+<p><span class="tag">说明</span> 以下建议基于OTA行业通用运营原则，并非本次数据分析的直接结论。各项建议的具体实施优先级及效果评估需结合平台后台数据进行验证。</p>
+
+<div class="strategy">
+  <div class="label">策略方向一</div>
+  <h3>优先提升评价量，而非追逐满分评分</h3>
+  <p>以店铺C为参考：它用4.4分的评分配合2,032条评价，在用户信任层面建立的门槛远高于评分5.0但评价仅298条的店铺A。对低评价量的店铺B而言，优先级应是先将评价基数从31条提升至100条以上，达到平台基础可信度阈值，再通过体验优化逐步拉高评分。评价量的积累依赖于系统性的住后触达动作，包括退房次日通过平台工具发送评价邀请。</p>
+</div>
+
+<div class="strategy">
+  <div class="label">策略方向二</div>
+  <h3>激活长期未运营房源的平台参与</h3>
+  <p>店铺B运营8年仅31条评价，说明其过去在美团平台上的参与程度极低。对于这类"沉睡型"房源，首要动作不是调价或换图，而是先将账号接入平台的运营体系——参与活动报名、关注流量扶持政策、开启智能定价工具等基础功能的配置。通过激活基础运营动作，逐步积累曝光与评价。</p>
+</div>
+
+<div class="strategy">
+  <div class="label">策略方向三</div>
+  <h3>视觉内容投入与运营活跃度正相关</h3>
+  <p>店铺A（214张照片，专业摄影）和店铺C（100张照片，专业暗调）均在视觉内容上有所投入，而店铺B（58张照片，普通实拍，无设施标注）最为薄弱。在同等价格区间内，视觉内容丰富度与运营活跃度呈现相关性。建议店铺B优先完成设施标注的补全，并分阶段补充照片至80-100张，覆盖空间全貌、核心功能区和细节特写，使详情页信息链完整。</p>
+</div>
+
+<h2>四、小结</h2>
+<p>本次分析框架选取了开业时间、评价量级、照片数、设施标注、标题策略五个维度进行对比。三份数据样本呈现出的核心差异在于：评价积累效率和运营活跃度的分化远比评分绝对值更能体现民宿的线上运营水平。</p>
+<p>店铺A与店铺C同年开业，评价量相差6.8倍，说明运营投入的差异可以短期拉开距离；店铺B运营8年评价不足百条，说明其线上运营参与度极低，亟需从基础配置入手激活。这些发现为BD或运营人员在面向房东提供优化建议时，提供了数据驱动的切入方向。</p>
+
+<hr>
+<p><a class="back-link" href="../portfolio.html">&larr; 返回作品集</a></p>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徐升记 · 高德平台门店诊断与投放建议</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.8;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 24px;
+    background: #fff;
+    color: #2d2d2d;
+  }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 4px; color: #1a1a1a; }
+  .sub { font-size: 14px; color: #8a7a72; margin-bottom: 4px; }
+  .meta-line { font-size: 13px; color: #b5978c; margin-bottom: 28px; }
+  h2 { font-size: 20px; font-weight: 600; margin-top: 36px; margin-bottom: 16px; border-bottom: 2px solid #e8e0dd; padding-bottom: 8px; color: #1a1a1a; }
+  h3 { font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 8px; color: #4a3a32; }
+  p { font-size: 15px; color: #4a4a4a; margin-bottom: 14px; text-align: justify; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+  th { background: #f5f0ed; font-weight: 600; padding: 10px 14px; border: 1px solid #d5c9c2; color: #4a3a32; text-align: center; }
+  td { padding: 10px 14px; border: 1px solid #d5c9c2; text-align: center; color: #4a4a4a; }
+  tr:nth-child(even) td { background: #fcfaf9; }
+  .highlight-box { background: #faf5f2; border-left: 4px solid #b5978c; padding: 16px 20px; margin: 16px 0 20px; border-radius: 0 6px 6px 0; }
+  .highlight-box p { margin-bottom: 0; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0 24px; }
+  .stat-card { background: #faf5f2; border-radius: 8px; padding: 16px; text-align: center; }
+  .stat-card .num { font-size: 22px; font-weight: 600; color: #4a3a32; }
+  .stat-card .desc { font-size: 12px; color: #8a7a72; margin-top: 2px; }
+  .back-link { display: inline-block; margin: 20px 0 40px; color: #8a7a72; text-decoration: none; font-size: 14px; }
+  .back-link:hover { color: #4a3a32; }
+  hr { border: none; border-top: 1px solid #e8e0dd; margin: 32px 0; }
+  ul, ol { padding-left: 20px; margin-bottom: 16px; }
+  li { font-size: 15px; color: #4a4a4a; margin-bottom: 6px; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<p><a class="back-link" href="https://wyt517.github.io">&larr; 返回作品集</a></p>
+
+<h1>徐升记 · 高德平台门店诊断与投放建议</h1>
+<p class="sub">基于高德静态API与手动采集数据</p>
+<p class="meta-line">吴燕婷 · 2026年5月 · 本报告仅供面试展示使用</p>
+
+<h2>一、主要问题与结论</h2>
+
+<div class="stat-grid">
+  <div class="stat-card"><div class="num">⏰ 3</div><div class="desc">必须处理的问题</div></div>
+  <div class="stat-card"><div class="num">✅ 3</div><div class="desc">可直接利用的优势</div></div>
+</div>
+
+<h3>三个必须处理的问题</h3>
+<ul>
+  <li><strong>无独立POI ID。</strong>当前POI依附于万达广场商场级父容器，无法投放品牌专区广告、无法出现在火锅品类搜索结果中。</li>
+  <li><strong>品类标签错误。</strong>typecode=060101（购物中心），不是"重庆火锅"，火锅品类定向投放无法命中。</li>
+  <li><strong>视觉资源不足。</strong>仅3张图片，高德推荐≥10张，缺少门头、环境、菜品特写。</li>
+</ul>
+
+<h3>三个可直接利用的优势</h3>
+<ul>
+  <li>评分4.6分——超过高德品牌广告准入门槛4.5分</li>
+  <li>关键词"李沧火锅"前三名均无广告位，当前竞价成本处于低位</li>
+  <li>人均¥77处于中档，适合同时推品质与优惠两种广告样式</li>
+</ul>
+
+<h2>二、用户评论高频词</h2>
+<p>数据来源：高德POI评论区前20条评论，手动逐条提取，2026-05-09</p>
+<table>
+  <tr><th>分类</th><th>代表词</th><th>频次</th></tr>
+  <tr><td>口味</td><td>正宗、牛油醇厚、毛肚脆</td><td>15</td></tr>
+  <tr><td>服务</td><td>服务好、贴心</td><td>8</td></tr>
+  <tr><td>价格</td><td>性价比高、套餐划算</td><td>7</td></tr>
+  <tr><td>环境</td><td>复古风、干净</td><td>5</td></tr>
+  <tr><td>免费项</td><td>免费冰淇淋、冰粉</td><td>4</td></tr>
+</table>
+<div class="highlight-box">
+  <p>"正宗"是核心卖点，应作为广告文案关键词。免费甜品是记忆点，可在POI动态突出展示。</p>
+</div>
+
+<h2>三、周边竞品对比</h2>
+<table>
+  <tr><th>指标</th><th>徐升记</th><th>滇牛</th><th>小羔羊</th></tr>
+  <tr><td>评分</td><td>4.6</td><td>4.2</td><td>4.5</td></tr>
+  <tr><td>评论数</td><td>237</td><td>412</td><td>189</td></tr>
+  <tr><td>人均(¥)</td><td>77</td><td>102</td><td>68</td></tr>
+  <tr><td>POI层级</td><td>商场附属</td><td>独立</td><td>独立</td></tr>
+  <tr><td>图片数</td><td>3</td><td>15</td><td>8</td></tr>
+  <tr><td>广告位</td><td>无</td><td>品牌专区</td><td>无</td></tr>
+  <tr><td>团购形式</td><td>六人餐</td><td>扫街券</td><td>5.5折套餐</td></tr>
+</table>
+<p>徐升记评分最高但评论量不够；滇牛已有广告位，需尽快跟进；缺少低门槛团购套餐。</p>
+
+<h2>四、投放计划</h2>
+<table>
+  <tr><th>项目</th><th>预算(元)</th><th>预期曝光(次)</th></tr>
+  <tr><td>品牌专区</td><td>2,500</td><td>15,000</td></tr>
+  <tr><td>关键词截流</td><td>1,800</td><td>9,000</td></tr>
+  <tr><td>超值优惠</td><td>1,200</td><td>8,000</td></tr>
+  <tr><td>本地推</td><td>1,500</td><td>10,000</td></tr>
+  <tr><td><strong>合计</strong></td><td><strong>7,000</strong></td><td><strong>42,000</strong></td></tr>
+</table>
+
+<h3>执行时间表</h3>
+<ul>
+  <li><strong>第一周：</strong>申请独立POI、修改typecode、上传≥10张图片</li>
+  <li><strong>两周内：</strong>上架双人套餐、投放品牌专区、引导写好评</li>
+  <li><strong>持续：</strong>每周更新POI动态、每两周分析数据、每月检查竞品</li>
+</ul>
+
+<hr>
+<p style="font-size:13px;color:#b5978c;">数据来源：高德静态API + 手动采集。预算金额为教学示例。</p>
+<p style="margin-top:32px;"><a class="back-link" href="https://wyt517.github.io">&larr; 返回作品集</a></p>
+
+</body>
+</html>
